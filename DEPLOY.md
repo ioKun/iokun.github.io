@@ -1,81 +1,74 @@
 # Публикация резюме на GitHub Pages
 
-После деплоя сайт будет доступен по адресу:
-
-**https://iokun.github.io/**
-
-(если репозиторий называется `iokun.github.io` — регистр GitHub username может отличаться, проверьте свой: https://github.com/ioKun)
-
----
-
-## Вариант 1 — Рекомендуемый: `username.github.io`
-
-1. Создайте на GitHub новый **публичный** репозиторий с именем **`iokun.github.io`** (или `ioKun.github.io` — GitHub обычно нечувствителен к регистру в URL).
-
-2. Скопируйте содержимое папки `resume-site/` в корень репозитория:
-   ```
-   index.html      ← русская версия
-   en/index.html   ← английская версия
-   css/style.css
-   ```
-
-3. Закоммитьте и запушьте в ветку `main`.
-
-4. GitHub → **Settings** → **Pages** → Source: **Deploy from branch** → `main` / `/ (root)`.
-
-5. Через 1–3 минуты:
-   - RU: `https://<username>.github.io/`
-   - EN: `https://<username>.github.io/en/`
-
-Переключатель **RU / EN** в правом верхнем углу обеих страниц.
+Репозиторий: `git@github.com:ioKun/iokun.github.io.git`  
+Сайт после деплоя:
+- **RU:** https://iokun.github.io/
+- **EN:** https://iokun.github.io/en/
 
 ---
 
-## Вариант 2 — Отдельный репозиторий `resume`
+## Первый пуш (уже настроено локально)
 
-1. Создайте репозиторий `resume` (публичный).
-2. Залейте файлы из `resume-site/`.
-3. Settings → Pages → branch `main`, folder `/ (root)`.
-4. URL: `https://iokun.github.io/resume/` (если repo называется `resume`).
+В папке `resume-site` remote уже указывает на ваш репозиторий. Осталось:
 
-В сопроводительных письмах указывайте полную ссылку.
+```powershell
+cd C:\Workspace\AI\InterviewPreparation\resume-site
+git push -u origin main
+```
+
+Если репозиторий на GitHub ещё пустой / только что создан — этого достаточно.
+
+Если GitHub ругается на non-fast-forward (там уже есть файлы, например README):
+
+```powershell
+git pull origin main --rebase
+git push -u origin main
+```
+
+Или, если уверены, что remote можно перезаписать:
+
+```powershell
+git push -u origin main --force
+```
+
+(force только если в remote нет нужной истории.)
+
+---
+
+## Включение GitHub Pages
+
+1. GitHub → репозиторий **iokun.github.io** → **Settings** → **Pages**
+2. Source: **Deploy from a branch**
+3. Branch: **main** / folder: **/ (root)** → Save
+4. Через 1–3 минуты откройте https://iokun.github.io/
+
+---
+
+## Дальнейшие обновления
+
+```powershell
+cd C:\Workspace\AI\InterviewPreparation\resume-site
+git add .
+git commit -m "Update resume"
+git push
+```
 
 ---
 
 ## Локальный просмотр
 
-Из папки `resume-site`:
-
 ```powershell
-# Python (если установлен)
+cd C:\Workspace\AI\InterviewPreparation\resume-site
 python -m http.server 8080
-
-# или npx
-npx serve .
 ```
 
-Откройте http://localhost:8080
+Откройте http://localhost:8080 (RU) и http://localhost:8080/en/ (EN).
 
 ---
 
-## Что указать в резюме и откликах
-
-В шапке PDF и LinkedIn добавьте строку:
+## В откликах
 
 ```
-Резюме (web): https://iokun.github.io/
+Resume: https://iokun.github.io/
+Resume (EN): https://iokun.github.io/en/
 ```
-
-Для рекрутеров это удобнее PDF: открывается с телефона, есть кликабельные ссылки на Play Store и GitHub.
-
----
-
-## Обновление
-
-При смене работы или новых метриках — правьте `index.html` и пушьте. GitHub Pages обновится автоматически.
-
----
-
-## Опционально: свой домен
-
-Settings → Pages → Custom domain → например `ivanlobanov.dev` (нужен DNS CNAME на `username.github.io`).
