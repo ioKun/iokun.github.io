@@ -62,7 +62,7 @@
         </div>
         <div class="metric">
           <span class="metric__value">Lead</span>
-          <span class="metric__label">команды · Code Review<br><small>GDG Perm 2015–2022</small></span>
+          <span class="metric__label">команда 1–2 · найм · CR<br><small>GDG Perm · 5–10 менти</small></span>
         </div>
       </aside>
     </div>
@@ -77,8 +77,8 @@
         сложных SDK и систем реального времени (VoIP, WebRTC, XMPP).
       </p>
       <p>
-        Руководил мобильными командами, выстраивал процессы Code Review и проводил
-        масштабный рефакторинг legacy-проектов. Эксперт в Kotlin/Java; практический опыт
+        Техлидил мобильную разработку, проводил найм и собеседования, выстраивал Code Review
+        и вёл масштабный рефакторинг legacy. Эксперт в Kotlin/Java; практический опыт
         с Go, Dart (Flutter), C++, Python. Фокус — отказоустойчивые системы, оптимизация
         сетевого взаимодействия и техническое лидерство.
       </p>
@@ -96,11 +96,11 @@
           <time class="job__period">2020 — 2026</time>
         </header>
         <ul class="job__highlights">
-          <li>Сократил время установки соединения с <strong>5–20 с до 1–5 с</strong> за счёт переработки handshake, trickle ICE и адаптивного перебора типов подключения.</li>
-          <li>Спроектировал механизмы auto-reconnect и адаптации к нестабильным корпоративным сетям — высокая стабильность медиапотоков.</li>
-          <li>С нуля разработал модули <strong>Messenger</strong> и <strong>Channels</strong>: Clean Architecture, MVI, Jetpack Compose, Coroutines, Flow.</li>
-          <li>Полностью переработал Android SDK: мониторинг состояния сети, отказоустойчивость аудио/видео-потоков.</li>
-          <li>Руководил мобильной командой, внедрил стандарты Code Review, оптимизировал поставку фич.</li>
+          <li>Сократил установку соединения / time-to-first-frame с <strong>5–20 с до 1–5 с</strong> (handshake, trickle ICE, адаптивный перебор типов подключения).</li>
+          <li>Спроектировал auto-reconnect и адаптацию к нестабильным корпоративным сетям — высокая стабильность медиапотоков.</li>
+          <li>С нуля разработал <strong>Messenger</strong> и <strong>Channels</strong>: Clean Architecture, MVI, Jetpack Compose, Coroutines, Flow.</li>
+          <li>Переработал Android SDK для внешних клиентов: мониторинг сети, отказоустойчивость аудио/видео; настройка сборки libwebrtc и точечные native-правки.</li>
+          <li>Tech Lead (команда 1–2): найм (<strong>3</strong> инженера), Code Review, GitLab CI и публикация артефактов.</li>
         </ul>
         <p class="job__links">
           <a href="https://play.google.com/store/apps/details?id=com.Videomost" target="_blank" rel="noopener">Google Play</a>
@@ -118,8 +118,8 @@
           <time class="job__period">2021 — н.в.</time>
         </header>
         <ul class="job__highlights">
-          <li>Руководил полным редизайном приложений <strong>Bosco</strong> и <strong>Bosco Outlet</strong>.</li>
-          <li>Оптимизировал производительность, обеспечил стабильную интеграцию платёжных шлюзов и поддержку новых версий Android.</li>
+          <li>Полный редизайн legacy <strong>Bosco</strong> и <strong>Bosco Outlet</strong>; миграция RxJava-участков на Coroutines/Flow.</li>
+          <li>Фичи, deeplinks, конструктор журнала (server-driven контент); стабильность <strong>~99% crash-free</strong>.</li>
         </ul>
         <p class="job__links">
           <a href="https://play.google.com/store/apps/details?id=ru.bosco.android" target="_blank" rel="noopener">Bosco</a>
@@ -137,7 +137,7 @@
           <time class="job__period">2018 — 2020</time>
         </header>
         <ul class="job__highlights">
-          <li><strong>Optimus</strong> — видеорегистратор на Android-планшете; Flutter-клиент, P2P-стриминг через WebRTC.</li>
+          <li><strong>Optimus</strong> — планшет-видеорегистратор (kiosk): ONVIF, FFmpeg/YUV, HLS-сервер на устройстве; Flutter-клиент и плагин для стримов/записей.</li>
           <li><strong>LNDC</strong> — десктоп на Kotlin для мониторинга нефтяных скважин; ведущий разработчик серверной части.</li>
         </ul>
       </article>
@@ -151,7 +151,7 @@
           <time class="job__period">2015 — 2018</time>
         </header>
         <ul class="job__highlights">
-          <li>Проектировал и выпускал <strong>Android SDK</strong> и <strong>Unity SDK</strong> для платежей и in-app purchases сторонних разработчиков.</li>
+          <li>Проектировал и выпускал <strong>Android SDK</strong> (Maven) и <strong>Unity SDK</strong> для платежей и IAP внешних студий.</li>
           <li>Разработал систему продуктовой аналитики на ClickHouse; оптимизировал хранилище под высокие объёмы логов.</li>
         </ul>
         <p class="job__links">
@@ -218,8 +218,8 @@
             <li>Flutter / Dart</li>
             <li>C++</li>
             <li>Python</li>
-            <li>FFmpeg / RTSP</li>
-            <li>CI/CD</li>
+            <li>FFmpeg / RTSP / ONVIF / HLS</li>
+            <li>GitLab CI/CD</li>
             <li>Docker</li>
             <li>ClickHouse</li>
           </ul>
@@ -238,8 +238,8 @@
           <time class="job__period">2015 — 2022</time>
         </header>
         <p>
-          Организовывал IT-митапы и конференции в регионе. Менторил студентов,
-          проводил воркшопы по Android-разработке, помогал запускать open-source проекты.
+          Организовывал IT-митапы и конференции. Менторил <strong>5–10</strong> инженеров
+          и студентов (воркшопы Android, путь до оффера в продуктовых компаниях).
         </p>
       </article>
     </section>
